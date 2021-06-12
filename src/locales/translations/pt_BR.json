@@ -1,6 +1,8 @@
 {
     "home": {
         "title": "Bem vindo ao projeto",
-        "introduction": "Projeto base para internacionalização"
+        "introduction": "Projeto base para internacionalização",
+        "bt_Portuguese": "Português",
+        "bt_English": "Inglês"
     }
 }

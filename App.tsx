@@ -2,7 +2,8 @@ import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider, Header } from 'react-native-elements';
 import Routes from './src/navigation';
-import './src/locales';
+import './src/locales/i18n';
+
 
 const App: React.FC = () => {
 

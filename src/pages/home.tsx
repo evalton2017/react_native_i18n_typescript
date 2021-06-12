@@ -1,8 +1,7 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text, Image} from 'react-native-elements';
-import {useTranslation} from 'react-i18next';
-
+import { Text } from 'react-native-elements';
+import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import FormRow from '../components/FormRow';
 import ButtonComponent from '../components/botoes/buttom-component';
@@ -10,40 +9,44 @@ import ButtonComponent from '../components/botoes/buttom-component';
 
 export const HomePage: React.FC = () => {
 
-    const {t} = useTranslation('home');
-
+    let { t, i18n } = useTranslation('home');
     const navigation = useNavigation();
 
-    function servicos() {
-        navigation.navigate('Servicos');
+
+    function portugues() {
+        i18n.changeLanguage('pt-BR')
     }
 
-    function agendamentos() {
-        navigation.navigate('Meus Agendamentos');
+    function ingles() {
+        i18n.changeLanguage('en-US')
     }
 
-    return (
-
-        <View>
+    function renderTela() {
+        return <View>
             <FormRow>
                 <View style={styles.container}>
                     <Text style={styles.texto}>{t('title')}</Text>
-                    <Text  style={styles.texto}>{t('introduction')}</Text>
+                    <Text style={styles.texto}>{t('introduction')}</Text>
                 </View>
 
                 <View>
                     <ButtonComponent
-                        metodo={servicos}
-                        texto="PORTUGUÊS"
+                        metodo={portugues}
+                        texto={t('bt_Portuguese')}
                     />
                     <ButtonComponent
-                        metodo={agendamentos}
-                        texto="INGLÊS"
+                        metodo={ingles}
+                        texto={t('bt_English')}
                     />
                 </View>
             </FormRow>
         </View>
-    );
+    }
+
+
+    return <>
+        {renderTela()}
+    </>
 }
 
 const styles = StyleSheet.create({
