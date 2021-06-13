@@ -4,23 +4,6 @@ import { initReactI18next } from 'react-i18next';
 import pt_BR from './translations/pt_BR.json';
 import en_US from './translations/en_US.json';
 
-/*declare module 'react-i18next' {
-  interface Resources {
-    pt: typeof pt_BR;
-    en: typeof en_US;
-  }
-}
-
-export const resources = {
-      pt:{
-        pt_BR
-      },
-      en:{
-        en_US
-      }
-    
-} as const;*/
-
 const resources = {
   ['pt-BR']: pt_BR,
   ['en-US']: en_US
